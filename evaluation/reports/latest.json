@@ -1,0 +1,1233 @@
+{
+  "meta": {
+    "generated_at": "2026-10-07T11:00:55+00:00",
+    "llm_provider": "ollama",
+    "llm_model": "llama3.2:3b",
+    "embedding_provider": "ollama",
+    "embedding_model": "nomic-embed-text",
+    "top_k": 4,
+    "min_score": 0.3
+  },
+  "warnings": [],
+  "metrics": {
+    "counts": {
+      "total": 47,
+      "knowledge": 28,
+      "unanswerable": 7,
+      "tool": 12
+    },
+    "retrieval": {
+      "precision_at_k": 0.6607,
+      "source_recall": 1.0,
+      "evidence_hit_rate": 1.0
+    },
+    "answers": {
+      "correctness_knowledge": 0.9643,
+      "correctness_tool": 1.0,
+      "citation_correctness": 1.0,
+      "false_fallback_rate": 0.0,
+      "hallucination_rate": 0.0,
+      "correct_refusal_rate": 1.0
+    },
+    "routing_accuracy": 1.0,
+    "tool_call_accuracy": 1.0,
+    "latency_ms": {
+      "mean": 2043.2,
+      "p50": 1913.1,
+      "p95": 3267.8
+    }
+  },
+  "failures": [
+    {
+      "id": "k01",
+      "question": "How many days do I have to return a product?",
+      "problems": [
+        "precision=0.75"
+      ]
+    },
+    {
+      "id": "k02",
+      "question": "Which items cannot be returned?",
+      "problems": [
+        "precision=0.75"
+      ]
+    },
+    {
+      "id": "k03",
+      "question": "How long do refunds take to show up?",
+      "problems": [
+        "precision=0.50"
+      ]
+    },
+    {
+      "id": "k04",
+      "question": "How much does a return label cost?",
+      "problems": [
+        "precision=0.75"
+      ]
+    },
+    {
+      "id": "k06",
+      "question": "What should I do if my item arrives damaged?",
+      "problems": [
+        "precision=0.50"
+      ]
+    },
+    {
+      "id": "k08",
+      "question": "When can an order be cancelled?",
+      "problems": [
+        "precision=0.50"
+      ]
+    },
+    {
+      "id": "k09",
+      "question": "How long do refunds for cancelled orders take?",
+      "problems": [
+        "precision=0.50"
+      ]
+    },
+    {
+      "id": "k10",
+      "question": "Can I change my delivery address after the order ships?",
+      "problems": [
+        "precision=0.75"
+      ]
+    },
+    {
+      "id": "k11",
+      "question": "How long does standard shipping take?",
+      "problems": [
+        "precision=0.50"
+      ]
+    },
+    {
+      "id": "k12",
+      "question": "How much does express shipping cost?",
+      "problems": [
+        "precision=0.25"
+      ]
+    },
+    {
+      "id": "k13",
+      "question": "What order value qualifies for free shipping?",
+      "problems": [
+        "precision=0.50"
+      ]
+    },
+    {
+      "id": "k14",
+      "question": "Do you ship internationally and how long does it take?",
+      "problems": [
+        "precision=0.50"
+      ]
+    },
+    {
+      "id": "k15",
+      "question": "Which carriers do you ship with?",
+      "problems": [
+        "precision=0.75"
+      ]
+    },
+    {
+      "id": "k16",
+      "question": "My package says delivered but I cannot find it",
+      "problems": [
+        "precision=0.25"
+      ]
+    },
+    {
+      "id": "k17",
+      "question": "How long is the warranty on products?",
+      "problems": [
+        "precision=0.75",
+        "answer missing expected facts"
+      ]
+    },
+    {
+      "id": "k20",
+      "question": "How long is the warranty on storage devices?",
+      "problems": [
+        "precision=0.75"
+      ]
+    },
+    {
+      "id": "k21",
+      "question": "Which payment methods do you accept?",
+      "problems": [
+        "precision=0.25"
+      ]
+    },
+    {
+      "id": "k23",
+      "question": "Where can I find my invoice?",
+      "problems": [
+        "precision=0.50"
+      ]
+    },
+    {
+      "id": "k27",
+      "question": "What are your support hours on Saturday?",
+      "problems": [
+        "precision=0.25"
+      ]
+    },
+    {
+      "id": "k28",
+      "question": "What is the support phone number?",
+      "problems": [
+        "precision=0.25"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "k01",
+      "type": "knowledge",
+      "question": "How many days do I have to return a product?",
+      "latency_ms": 23673.718199992436,
+      "intent": "refund_question",
+      "status": "answered",
+      "cited": [
+        "refund_policy.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "refund_policy.md",
+        "warranty_policy.docx",
+        "refund_policy.md",
+        "refund_policy.md"
+      ],
+      "top_score": 0.7856,
+      "precision": 0.75,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "You have 30 days to return a product, counted from the day the carrier marks the package as delivered."
+    },
+    {
+      "id": "k02",
+      "type": "knowledge",
+      "question": "Which items cannot be returned?",
+      "latency_ms": 2522.8526999999303,
+      "intent": "refund_question",
+      "status": "answered",
+      "cited": [
+        "refund_policy.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "refund_policy.md",
+        "refund_policy.md",
+        "cancellation_policy.txt",
+        "refund_policy.md"
+      ],
+      "top_score": 0.8923,
+      "precision": 0.75,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "[1] Products that cannot be returned: gift cards, downloadable software, personalized or engraved items, and items marked \"Final Sale\" on the product page."
+    },
+    {
+      "id": "k03",
+      "type": "knowledge",
+      "question": "How long do refunds take to show up?",
+      "latency_ms": 2095.156199997291,
+      "intent": "refund_question",
+      "status": "answered",
+      "cited": [
+        "refund_policy.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "shipping_policy.pdf",
+        "cancellation_policy.txt",
+        "refund_policy.md",
+        "refund_policy.md"
+      ],
+      "top_score": 0.6227,
+      "precision": 0.5,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "According to [3], refunds appear 5 to 7 business days after the warehouse receives and inspects the returned item."
+    },
+    {
+      "id": "k04",
+      "type": "knowledge",
+      "question": "How much does a return label cost?",
+      "latency_ms": 3200.3421999979764,
+      "intent": "refund_question",
+      "status": "answered",
+      "cited": [
+        "refund_policy.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "refund_policy.md",
+        "refund_policy.md",
+        "refund_policy.md",
+        "warranty_policy.docx"
+      ],
+      "top_score": 0.7735,
+      "precision": 0.75,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "For all returns, a return label costs $6.99, deducted from the refund."
+    },
+    {
+      "id": "k05",
+      "type": "knowledge",
+      "question": "Is there a restocking fee for opened laptops?",
+      "latency_ms": 2570.3841999929864,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "refund_policy.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "refund_policy.md",
+        "refund_policy.md",
+        "refund_policy.md",
+        "refund_policy.md"
+      ],
+      "top_score": 0.9189,
+      "precision": 1.0,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "Yes, there is a 15% restocking fee for opened laptops, monitors, and drones."
+    },
+    {
+      "id": "k06",
+      "type": "knowledge",
+      "question": "What should I do if my item arrives damaged?",
+      "latency_ms": 2839.1913999948883,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "refund_policy.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "refund_policy.md",
+        "refund_policy.md",
+        "cancellation_policy.txt",
+        "cancellation_policy.txt"
+      ],
+      "top_score": 0.8687,
+      "precision": 0.5,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "If your item arrives damaged, contact us within 14 days of delivery with photos. We will send a replacement or a full refund, including shipping, at no cost to you."
+    },
+    {
+      "id": "k07",
+      "type": "knowledge",
+      "question": "How do I start a return?",
+      "latency_ms": 1939.6375000069384,
+      "intent": "refund_question",
+      "status": "answered",
+      "cited": [
+        "refund_policy.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "refund_policy.md",
+        "refund_policy.md",
+        "refund_policy.md",
+        "refund_policy.md"
+      ],
+      "top_score": 0.8539,
+      "precision": 1.0,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "To start a return, contact support with your order number, and a support agent will verify eligibility and email you a return label."
+    },
+    {
+      "id": "k08",
+      "type": "knowledge",
+      "question": "When can an order be cancelled?",
+      "latency_ms": 2404.7331000037957,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "cancellation_policy.txt"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "cancellation_policy.txt",
+        "cancellation_policy.txt",
+        "payment_faq.md",
+        "payment_faq.md"
+      ],
+      "top_score": 0.9093,
+      "precision": 0.5,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "An order can be cancelled free of charge while its status is Pending or Processing. Once an order has the status Shipped it can no longer be cancelled."
+    },
+    {
+      "id": "k09",
+      "type": "knowledge",
+      "question": "How long do refunds for cancelled orders take?",
+      "latency_ms": 1563.5196999937762,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "cancellation_policy.txt",
+        "cancellation_policy.txt"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "cancellation_policy.txt",
+        "cancellation_policy.txt",
+        "refund_policy.md",
+        "shipping_policy.pdf"
+      ],
+      "top_score": 0.708,
+      "precision": 0.5,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "Refunds for cancelled orders are issued within 3 to 5 business days. [1] [2]"
+    },
+    {
+      "id": "k10",
+      "type": "knowledge",
+      "question": "Can I change my delivery address after the order ships?",
+      "latency_ms": 2533.73830000055,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "shipping_policy.pdf"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "shipping_policy.pdf",
+        "account_privacy.md",
+        "shipping_policy.pdf",
+        "cancellation_policy.txt"
+      ],
+      "top_score": 0.6557,
+      "precision": 0.75,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "No, you can only change your delivery address while the order status is Pending or Processing. [1]"
+    },
+    {
+      "id": "k11",
+      "type": "knowledge",
+      "question": "How long does standard shipping take?",
+      "latency_ms": 2720.65949998796,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "shipping_policy.pdf"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "shipping_policy.pdf",
+        "shipping_policy.pdf",
+        "refund_policy.md",
+        "refund_policy.md"
+      ],
+      "top_score": 0.6402,
+      "precision": 0.5,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "According to [1], standard shipping takes 3 to 5 business days."
+    },
+    {
+      "id": "k12",
+      "type": "knowledge",
+      "question": "How much does express shipping cost?",
+      "latency_ms": 2242.2076999937417,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "shipping_policy.pdf"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "shipping_policy.pdf",
+        "refund_policy.md",
+        "account_privacy.md",
+        "refund_policy.md"
+      ],
+      "top_score": 0.7353,
+      "precision": 0.25,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "Express shipping costs $14.99. [1]"
+    },
+    {
+      "id": "k13",
+      "type": "knowledge",
+      "question": "What order value qualifies for free shipping?",
+      "latency_ms": 2580.699199999799,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "shipping_policy.pdf"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "shipping_policy.pdf",
+        "cancellation_policy.txt",
+        "refund_policy.md",
+        "shipping_policy.pdf"
+      ],
+      "top_score": 0.7456,
+      "precision": 0.5,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "[1] Domestic shipping options. Orders over $50 qualify for free standard shipping."
+    },
+    {
+      "id": "k14",
+      "type": "knowledge",
+      "question": "Do you ship internationally and how long does it take?",
+      "latency_ms": 2856.6332000045804,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "shipping_policy.pdf"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "shipping_policy.pdf",
+        "shipping_policy.pdf",
+        "refund_policy.md",
+        "refund_policy.md"
+      ],
+      "top_score": 0.6667,
+      "precision": 0.5,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "Yes, we ship internationally. International orders take 7 to 14 business days to arrive. [1]"
+    },
+    {
+      "id": "k15",
+      "type": "knowledge",
+      "question": "Which carriers do you ship with?",
+      "latency_ms": 2005.7987999898614,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "shipping_policy.pdf"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "shipping_policy.pdf",
+        "shipping_policy.pdf",
+        "shipping_policy.pdf",
+        "refund_policy.md"
+      ],
+      "top_score": 0.577,
+      "precision": 0.75,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "[1] We ship with UPS, FedEx, USPS and DHL."
+    },
+    {
+      "id": "k16",
+      "type": "knowledge",
+      "question": "My package says delivered but I cannot find it",
+      "latency_ms": 2672.085399986827,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "shipping_policy.pdf"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "shipping_policy.pdf",
+        "refund_policy.md",
+        "cancellation_policy.txt",
+        "refund_policy.md"
+      ],
+      "top_score": 0.7662,
+      "precision": 0.25,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "[1] (shipping_policy.pdf — page 3)\n\nIf tracking shows delivered but you cannot find the package, contact support within 14 days of the delivery date. We will open a carrier investigation and send a replacement or refund if the package is confirmed lost."
+    },
+    {
+      "id": "k17",
+      "type": "knowledge",
+      "question": "How long is the warranty on products?",
+      "latency_ms": 3267.7833999914583,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "warranty_policy.docx"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "warranty_policy.docx",
+        "warranty_policy.docx",
+        "account_privacy.md",
+        "warranty_policy.docx"
+      ],
+      "top_score": 0.7319,
+      "precision": 0.75,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": false,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "The warranty on products varies depending on the product category and membership tier. For standard members, the warranty is 12 months. For premium members, the warranty is 24 months on eligible products. For storage devices, the warranty is 36 months."
+    },
+    {
+      "id": "k18",
+      "type": "knowledge",
+      "question": "Does the warranty cover water damage?",
+      "latency_ms": 3482.1898999944096,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "warranty_policy.docx"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "warranty_policy.docx",
+        "warranty_policy.docx",
+        "warranty_policy.docx",
+        "warranty_policy.docx"
+      ],
+      "top_score": 0.8878,
+      "precision": 1.0,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "No, the warranty does not cover water damage. [1]"
+    },
+    {
+      "id": "k19",
+      "type": "knowledge",
+      "question": "What do I need to make a warranty claim?",
+      "latency_ms": 2507.481299995561,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "warranty_policy.docx"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "warranty_policy.docx",
+        "warranty_policy.docx",
+        "warranty_policy.docx",
+        "warranty_policy.docx"
+      ],
+      "top_score": 0.6981,
+      "precision": 1.0,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "To make a warranty claim, you need to contact support with your order number, the product serial number, and photos or a short video of the problem."
+    },
+    {
+      "id": "k20",
+      "type": "knowledge",
+      "question": "How long is the warranty on storage devices?",
+      "latency_ms": 2007.3045000026468,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "warranty_policy.docx"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "warranty_policy.docx",
+        "warranty_policy.docx",
+        "warranty_policy.docx",
+        "account_privacy.md"
+      ],
+      "top_score": 0.7729,
+      "precision": 0.75,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "The warranty on storage devices is 36 months. [1]"
+    },
+    {
+      "id": "k21",
+      "type": "knowledge",
+      "question": "Which payment methods do you accept?",
+      "latency_ms": 2640.5945000005886,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "payment_faq.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "payment_faq.md",
+        "cancellation_policy.txt",
+        "refund_policy.md",
+        "cancellation_policy.txt"
+      ],
+      "top_score": 0.932,
+      "precision": 0.25,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "We accept Visa, Mastercard, American Express, PayPal, and Apple Pay."
+    },
+    {
+      "id": "k22",
+      "type": "knowledge",
+      "question": "Do you accept cryptocurrency?",
+      "latency_ms": 1446.8512000021292,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "payment_faq.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "payment_faq.md"
+      ],
+      "top_score": 0.8425,
+      "precision": 1.0,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "We do not accept cryptocurrency. [1]"
+    },
+    {
+      "id": "k23",
+      "type": "knowledge",
+      "question": "Where can I find my invoice?",
+      "latency_ms": 1805.015399993863,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "payment_faq.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "payment_faq.md",
+        "shipping_policy.pdf"
+      ],
+      "top_score": 0.6133,
+      "precision": 0.5,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "You can find your invoice attached to the order confirmation email. [1]"
+    },
+    {
+      "id": "k24",
+      "type": "knowledge",
+      "question": "How do I reset my password?",
+      "latency_ms": 2136.7737999971723,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "account_privacy.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "account_privacy.md",
+        "account_privacy.md"
+      ],
+      "top_score": 0.9047,
+      "precision": 1.0,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "[1] Use the \"Forgot password\" link on the sign-in page. A reset link is emailed to the address on your account and is valid for 60 minutes."
+    },
+    {
+      "id": "k25",
+      "type": "knowledge",
+      "question": "How long do you keep chat transcripts?",
+      "latency_ms": 1913.05960000318,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "account_privacy.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "account_privacy.md",
+        "account_privacy.md",
+        "account_privacy.md"
+      ],
+      "top_score": 0.7872,
+      "precision": 1.0,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "[1] We keep chat transcripts for 24 months to improve support quality."
+    },
+    {
+      "id": "k26",
+      "type": "knowledge",
+      "question": "What membership tiers do you have?",
+      "latency_ms": 1902.1635000099195,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "account_privacy.md"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "account_privacy.md"
+      ],
+      "top_score": 0.8787,
+      "precision": 1.0,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "We have three membership tiers: standard, plus, and premium. Premium members receive a 24-month warranty on eligible products and free express shipping."
+    },
+    {
+      "id": "k27",
+      "type": "knowledge",
+      "question": "What are your support hours on Saturday?",
+      "latency_ms": 3087.595400007558,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "support_hours.txt"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "support_hours.txt",
+        "payment_faq.md",
+        "shipping_policy.pdf",
+        "account_privacy.md"
+      ],
+      "top_score": 0.8405,
+      "precision": 0.25,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "[1] (support_hours.txt) states that support hours on Saturday are from 9:00 AM to 5:00 PM Eastern Time."
+    },
+    {
+      "id": "k28",
+      "type": "knowledge",
+      "question": "What is the support phone number?",
+      "latency_ms": 2131.372099989676,
+      "intent": "knowledge_question",
+      "status": "answered",
+      "cited": [
+        "support_hours.txt"
+      ],
+      "routing_ok": true,
+      "retrieved": [
+        "support_hours.txt",
+        "refund_policy.md",
+        "account_privacy.md",
+        "warranty_policy.docx"
+      ],
+      "top_score": 0.686,
+      "precision": 0.25,
+      "source_recall": 1.0,
+      "evidence_hit": true,
+      "answered": true,
+      "validation_reasons": [],
+      "correct": true,
+      "citation_ok": true,
+      "hallucinated": false,
+      "answer": "The support phone number is 1-800-555-0142. [1]"
+    },
+    {
+      "id": "u01",
+      "type": "unanswerable",
+      "question": "Who won the football world cup in 2018?",
+      "latency_ms": 932.5291999994079,
+      "intent": "knowledge_question",
+      "status": "fallback",
+      "cited": [],
+      "routing_ok": true,
+      "retrieved": [],
+      "top_score": 0.224,
+      "fell_back": true,
+      "answer": "I couldn't find reliable information about that in the available knowledge base. Would you like me to connect you with a human support agent?"
+    },
+    {
+      "id": "u02",
+      "type": "unanswerable",
+      "question": "What is the capital of France?",
+      "latency_ms": 838.0749999923864,
+      "intent": "knowledge_question",
+      "status": "fallback",
+      "cited": [],
+      "routing_ok": true,
+      "retrieved": [],
+      "top_score": 0.2317,
+      "fell_back": true,
+      "answer": "I couldn't find reliable information about that in the available knowledge base. Would you like me to connect you with a human support agent?"
+    },
+    {
+      "id": "u03",
+      "type": "unanswerable",
+      "question": "Can you recommend a good pizza recipe?",
+      "latency_ms": 806.334600012633,
+      "intent": "knowledge_question",
+      "status": "fallback",
+      "cited": [],
+      "routing_ok": true,
+      "retrieved": [],
+      "top_score": 0.2442,
+      "fell_back": true,
+      "answer": "I couldn't find reliable information about that in the available knowledge base. Would you like me to connect you with a human support agent?"
+    },
+    {
+      "id": "u04",
+      "type": "unanswerable",
+      "question": "What is the weather in Seattle tomorrow?",
+      "latency_ms": 815.3283999999985,
+      "intent": "knowledge_question",
+      "status": "fallback",
+      "cited": [],
+      "routing_ok": true,
+      "retrieved": [],
+      "top_score": 0.2324,
+      "fell_back": true,
+      "answer": "I couldn't find reliable information about that in the available knowledge base. Would you like me to connect you with a human support agent?"
+    },
+    {
+      "id": "u05",
+      "type": "unanswerable",
+      "question": "How do I install Kubernetes on Ubuntu?",
+      "latency_ms": 831.7417999933241,
+      "intent": "knowledge_question",
+      "status": "fallback",
+      "cited": [],
+      "routing_ok": true,
+      "retrieved": [],
+      "top_score": 0.235,
+      "fell_back": true,
+      "answer": "I couldn't find reliable information about that in the available knowledge base. Would you like me to connect you with a human support agent?"
+    },
+    {
+      "id": "u06",
+      "type": "unanswerable",
+      "question": "Do you offer a price match guarantee?",
+      "latency_ms": 816.6727999923751,
+      "intent": "knowledge_question",
+      "status": "fallback",
+      "cited": [],
+      "routing_ok": true,
+      "retrieved": [],
+      "top_score": 0.2912,
+      "fell_back": true,
+      "answer": "I couldn't find reliable information about that in the available knowledge base. Would you like me to connect you with a human support agent?"
+    },
+    {
+      "id": "u07",
+      "type": "unanswerable",
+      "question": "Do you offer student discounts?",
+      "latency_ms": 794.2089999996824,
+      "intent": "knowledge_question",
+      "status": "fallback",
+      "cited": [],
+      "routing_ok": true,
+      "retrieved": [],
+      "top_score": 0.285,
+      "fell_back": true,
+      "answer": "I couldn't find reliable information about that in the available knowledge base. Would you like me to connect you with a human support agent?"
+    },
+    {
+      "id": "t01",
+      "type": "tool",
+      "question": "Where is order ORD-1024?",
+      "latency_ms": 98.0210999987321,
+      "intent": "order_status",
+      "routing_ok": true,
+      "tools": [
+        "get_order_status",
+        "get_order_items"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "Order ORD-1024 has shipped on Oct 04, 2026.\nCarrier: USPS, tracking number US3836517266.\nItems: 1 x Pulse Kids Tracker, 1 x Cirrus Studio Wired Headphones, 1 x Ember 10,000mAh Slim Power Bank.\nTotal: 197.00 USD (payment: paid)."
+    },
+    {
+      "id": "t02",
+      "type": "tool",
+      "question": "Has ORD-1002 been delivered?",
+      "latency_ms": 79.73369999672286,
+      "intent": "order_status",
+      "routing_ok": true,
+      "tools": [
+        "get_order_status",
+        "get_order_items"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "Order ORD-1002 was delivered on Sep 27, 2026.\nItems: 1 x Ember Travel Adapter.\nTotal: 22.00 USD (payment: paid)."
+    },
+    {
+      "id": "t03",
+      "type": "tool",
+      "question": "Can I return ORD-1002?",
+      "latency_ms": 353.33309999259654,
+      "intent": "refund_question",
+      "routing_ok": true,
+      "tools": [
+        "check_refund_eligibility"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "Order ORD-1002 was delivered 10 days ago, so it is within the 30-day return window (until Oct 27, 2026).\nWould you like me to open a support ticket so an agent can arrange the return?"
+    },
+    {
+      "id": "t04",
+      "type": "tool",
+      "question": "Can I return ORD-1003?",
+      "latency_ms": 367.08789999829605,
+      "intent": "refund_question",
+      "routing_ok": true,
+      "tools": [
+        "check_refund_eligibility"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "Order ORD-1003 was delivered 45 days ago, which is past the 30-day return window (it ended Sep 22, 2026)."
+    },
+    {
+      "id": "t05",
+      "type": "tool",
+      "question": "Please cancel order ORD-1001 / no",
+      "latency_ms": 71.04509999771835,
+      "intent": "cancellation_request",
+      "routing_ok": true,
+      "tools": [
+        "get_order_status",
+        "get_order_items"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "No problem, I've left everything as it is. Is there anything else I can help with?"
+    },
+    {
+      "id": "t06",
+      "type": "tool",
+      "question": "Please cancel order ORD-1001 / yes",
+      "latency_ms": 76.7773500047042,
+      "intent": "cancellation_request",
+      "routing_ok": true,
+      "tools": [
+        "get_order_status",
+        "get_order_items",
+        "cancel_order"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "Order ORD-1001 has been cancelled. A refund of 408.00 USD has been initiated to your original payment method."
+    },
+    {
+      "id": "t07",
+      "type": "tool",
+      "question": "Show me my account details",
+      "latency_ms": 59.121400001458824,
+      "intent": "customer_information",
+      "routing_ok": true,
+      "tools": [
+        "get_customer_details"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "Here are the details on your account, Aisha Khan:\nCustomer ID: CUST-1001\nEmail: aisha.khan@example.com\nPhone: ***5506\nMembership tier: plus\nMember since: Aug 14, 2024\nOrders on file: 4"
+    },
+    {
+      "id": "t08",
+      "type": "tool",
+      "question": "Cancel ORD-1024",
+      "latency_ms": 61.03830000211019,
+      "intent": "cancellation_request",
+      "routing_ok": true,
+      "tools": [
+        "get_order_status"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "Order ORD-1024 is shipped, so it can no longer be cancelled. Would you like me to connect you with a human support agent?"
+    },
+    {
+      "id": "t09",
+      "type": "tool",
+      "question": "Where is order ORD-1004?",
+      "latency_ms": 59.466999999131076,
+      "intent": "order_status",
+      "routing_ok": true,
+      "tools": [
+        "get_order_status"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "I couldn't find order ORD-1004 on your account."
+    },
+    {
+      "id": "t10",
+      "type": "tool",
+      "question": "My payment was successful but my order wasn't created.",
+      "latency_ms": 69.44890000158921,
+      "intent": "escalation",
+      "routing_ok": true,
+      "tools": [
+        "create_support_ticket"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "I've passed this to our human support team (ticket TCK-00046). An agent will follow up, and they can see this conversation, so you won't need to repeat yourself. If you have a transaction ID or the last four digits of the card used, add it to this chat."
+    },
+    {
+      "id": "t11",
+      "type": "tool",
+      "question": "I want to speak to a human",
+      "latency_ms": 65.11029999819584,
+      "intent": "escalation",
+      "routing_ok": true,
+      "tools": [
+        "create_support_ticket"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "I've passed this to our human support team (ticket TCK-00047). An agent will follow up, and they can see this conversation, so you won't need to repeat yourself."
+    },
+    {
+      "id": "t12",
+      "type": "tool",
+      "question": "My order number is ORD-1024. / Where is it now?",
+      "latency_ms": 85.08599999913713,
+      "intent": "order_status",
+      "routing_ok": true,
+      "tools": [
+        "get_order_status",
+        "get_order_items",
+        "get_order_status",
+        "get_order_items"
+      ],
+      "tool_ok": true,
+      "correct": true,
+      "answer": "Order ORD-1024 has shipped on Oct 04, 2026.\nCarrier: USPS, tracking number US3836517266.\nItems: 1 x Pulse Kids Tracker, 1 x Cirrus Studio Wired Headphones, 1 x Ember 10,000mAh Slim Power Bank.\nTotal: 197.00 USD (payment: paid)."
+    }
+  ]
+}

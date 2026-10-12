@@ -1,0 +1,14 @@
+.env
+*.log
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+backend/.venv/
+node_modules/
+frontend/dist/
+data/app.db
+data/chroma/
+data/runtime_settings.json
+data/state/
+data/*.backup
+backend/*.db

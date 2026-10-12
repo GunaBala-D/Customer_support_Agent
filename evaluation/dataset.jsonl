@@ -1,0 +1,47 @@
+{"id": "k01", "type": "knowledge", "question": "How many days do I have to return a product?", "expected_sources": ["refund_policy.md"], "expected_phrases": ["30 days"]}
+{"id": "k02", "type": "knowledge", "question": "Which items cannot be returned?", "expected_sources": ["refund_policy.md"], "expected_phrases": ["gift cards"]}
+{"id": "k03", "type": "knowledge", "question": "How long do refunds take to show up?", "expected_sources": ["refund_policy.md"], "expected_phrases": ["5 to 7 business days"]}
+{"id": "k04", "type": "knowledge", "question": "How much does a return label cost?", "expected_sources": ["refund_policy.md"], "expected_phrases": ["$6.99"]}
+{"id": "k05", "type": "knowledge", "question": "Is there a restocking fee for opened laptops?", "expected_sources": ["refund_policy.md"], "expected_phrases": ["15%"]}
+{"id": "k06", "type": "knowledge", "question": "What should I do if my item arrives damaged?", "expected_sources": ["refund_policy.md"], "expected_phrases": ["14 days"]}
+{"id": "k07", "type": "knowledge", "question": "How do I start a return?", "expected_sources": ["refund_policy.md"], "expected_phrases": ["return label"]}
+{"id": "k08", "type": "knowledge", "question": "When can an order be cancelled?", "expected_sources": ["cancellation_policy.txt"], "expected_phrases": ["Pending or Processing"]}
+{"id": "k09", "type": "knowledge", "question": "How long do refunds for cancelled orders take?", "expected_sources": ["cancellation_policy.txt"], "expected_phrases": ["3 to 5 business days"]}
+{"id": "k10", "type": "knowledge", "question": "Can I change my delivery address after the order ships?", "expected_sources": ["cancellation_policy.txt", "shipping_policy.pdf"], "expected_phrases": ["Pending"]}
+{"id": "k11", "type": "knowledge", "question": "How long does standard shipping take?", "expected_sources": ["shipping_policy.pdf"], "expected_phrases": ["3 to 5 business days"]}
+{"id": "k12", "type": "knowledge", "question": "How much does express shipping cost?", "expected_sources": ["shipping_policy.pdf"], "expected_phrases": ["$14.99"]}
+{"id": "k13", "type": "knowledge", "question": "What order value qualifies for free shipping?", "expected_sources": ["shipping_policy.pdf"], "expected_phrases": ["$50"]}
+{"id": "k14", "type": "knowledge", "question": "Do you ship internationally and how long does it take?", "expected_sources": ["shipping_policy.pdf"], "expected_phrases": ["7 to 14 business days"]}
+{"id": "k15", "type": "knowledge", "question": "Which carriers do you ship with?", "expected_sources": ["shipping_policy.pdf"], "expected_phrases": ["UPS"]}
+{"id": "k16", "type": "knowledge", "question": "My package says delivered but I cannot find it", "expected_sources": ["shipping_policy.pdf"], "expected_phrases": ["14 days"]}
+{"id": "k17", "type": "knowledge", "question": "How long is the warranty on products?", "expected_sources": ["warranty_policy.docx"], "expected_phrases": ["12-month"]}
+{"id": "k18", "type": "knowledge", "question": "Does the warranty cover water damage?", "expected_sources": ["warranty_policy.docx"], "expected_phrases": ["water damage"]}
+{"id": "k19", "type": "knowledge", "question": "What do I need to make a warranty claim?", "expected_sources": ["warranty_policy.docx"], "expected_phrases": ["serial number"]}
+{"id": "k20", "type": "knowledge", "question": "How long is the warranty on storage devices?", "expected_sources": ["warranty_policy.docx"], "expected_phrases": ["36 months"]}
+{"id": "k21", "type": "knowledge", "question": "Which payment methods do you accept?", "expected_sources": ["payment_faq.md"], "expected_phrases": ["PayPal"]}
+{"id": "k22", "type": "knowledge", "question": "Do you accept cryptocurrency?", "expected_sources": ["payment_faq.md"], "expected_phrases": ["cryptocurrency"]}
+{"id": "k23", "type": "knowledge", "question": "Where can I find my invoice?", "expected_sources": ["payment_faq.md"], "expected_phrases": ["confirmation email"]}
+{"id": "k24", "type": "knowledge", "question": "How do I reset my password?", "expected_sources": ["account_privacy.md"], "expected_phrases": ["Forgot password"]}
+{"id": "k25", "type": "knowledge", "question": "How long do you keep chat transcripts?", "expected_sources": ["account_privacy.md"], "expected_phrases": ["24 months"]}
+{"id": "k26", "type": "knowledge", "question": "What membership tiers do you have?", "expected_sources": ["account_privacy.md"], "expected_phrases": ["premium"]}
+{"id": "k27", "type": "knowledge", "question": "What are your support hours on Saturday?", "expected_sources": ["support_hours.txt"], "expected_phrases": ["9:00 AM to 5:00 PM"]}
+{"id": "k28", "type": "knowledge", "question": "What is the support phone number?", "expected_sources": ["support_hours.txt"], "expected_phrases": ["1-800-555-0142"]}
+{"id": "u01", "type": "unanswerable", "question": "Who won the football world cup in 2018?", "expect_fallback": true}
+{"id": "u02", "type": "unanswerable", "question": "What is the capital of France?", "expect_fallback": true}
+{"id": "u03", "type": "unanswerable", "question": "Can you recommend a good pizza recipe?", "expect_fallback": true}
+{"id": "u04", "type": "unanswerable", "question": "What is the weather in Seattle tomorrow?", "expect_fallback": true}
+{"id": "u05", "type": "unanswerable", "question": "How do I install Kubernetes on Ubuntu?", "expect_fallback": true}
+{"id": "u06", "type": "unanswerable", "question": "Do you offer a price match guarantee?", "expect_fallback": true}
+{"id": "u07", "type": "unanswerable", "question": "Do you offer student discounts?", "expect_fallback": true}
+{"id": "t01", "type": "tool", "customer_id": "CUST-1001", "question": "Where is order ORD-1024?", "expected_intent": "order_status", "expected_tools": ["get_order_status", "get_order_items"], "expected_phrases": ["shipped"]}
+{"id": "t02", "type": "tool", "customer_id": "CUST-1001", "question": "Has ORD-1002 been delivered?", "expected_intent": "order_status", "expected_tools": ["get_order_status", "get_order_items"], "expected_phrases": ["was delivered"]}
+{"id": "t03", "type": "tool", "customer_id": "CUST-1001", "question": "Can I return ORD-1002?", "expected_intent": "refund_question", "expected_tools": ["check_refund_eligibility"], "expected_phrases": ["within the 30-day return window"]}
+{"id": "t04", "type": "tool", "customer_id": "CUST-1001", "question": "Can I return ORD-1003?", "expected_intent": "refund_question", "expected_tools": ["check_refund_eligibility"], "expected_phrases": ["past the 30-day"]}
+{"id": "t05", "type": "tool", "customer_id": "CUST-1001", "turns": ["Please cancel order ORD-1001", "no"], "expected_intent": "cancellation_request", "expected_tools": ["get_order_status", "get_order_items"], "expected_phrases": ["left everything as it is"], "forbidden_tools": ["cancel_order"]}
+{"id": "t06", "type": "tool", "customer_id": "CUST-1001", "turns": ["Please cancel order ORD-1001", "yes"], "expected_intent": "cancellation_request", "expected_tools": ["get_order_status", "get_order_items", "cancel_order"], "expected_phrases": ["has been cancelled"]}
+{"id": "t07", "type": "tool", "customer_id": "CUST-1001", "question": "Show me my account details", "expected_intent": "customer_information", "expected_tools": ["get_customer_details"], "expected_phrases": ["Aisha Khan"]}
+{"id": "t08", "type": "tool", "customer_id": "CUST-1001", "question": "Cancel ORD-1024", "expected_intent": "cancellation_request", "expected_tools": ["get_order_status"], "expected_phrases": ["can no longer be cancelled"], "forbidden_tools": ["cancel_order"]}
+{"id": "t09", "type": "tool", "customer_id": "CUST-1001", "question": "Where is order ORD-1004?", "expected_intent": "order_status", "expected_tools": ["get_order_status"], "expected_phrases": ["couldn't find order"]}
+{"id": "t10", "type": "tool", "customer_id": "CUST-1001", "question": "My payment was successful but my order wasn't created.", "expected_intent": "escalation", "expected_tools": ["create_support_ticket"], "expected_phrases": ["human support team"]}
+{"id": "t11", "type": "tool", "customer_id": "CUST-1001", "question": "I want to speak to a human", "expected_intent": "escalation", "expected_tools": ["create_support_ticket"], "expected_phrases": ["human support team"]}
+{"id": "t12", "type": "tool", "customer_id": "CUST-1001", "turns": ["My order number is ORD-1024.", "Where is it now?"], "expected_intent": "order_status", "expected_tools": ["get_order_status", "get_order_items"], "expected_phrases": ["ORD-1024"]}

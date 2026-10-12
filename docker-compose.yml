@@ -1,0 +1,77 @@
+# Full stack: Postgres + Redis + FastAPI + React (nginx). Chroma runs embedded in the backend
+# and persists to the `chroma` volume, so it needs no separate container.
+#
+# Ollama (pick one):
+#   A) Ollama on the host (recommended on a Mac: uses Apple-silicon GPU / Metal)
+#        ollama serve && ollama pull llama3.2:3b && ollama pull nomic-embed-text
+#        docker compose up --build            # backend reaches it via host.docker.internal
+#   B) Ollama in a container (CPU only on macOS Docker)
+#        OLLAMA_BASE_URL=http://ollama:11434 docker compose --profile ollama up --build
+#        docker compose exec ollama ollama pull llama3.2:3b   (and nomic-embed-text)
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: support
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-support}
+      POSTGRES_DB: support
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U support"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build: { context: ., dockerfile: docker/backend.Dockerfile }
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    environment:
+      DATABASE_URL: postgresql+psycopg://support:${POSTGRES_PASSWORD:-support}@postgres:5432/support
+      REDIS_URL: redis://redis:6379/0
+      CHROMA_PATH: /app/data/chroma
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2:3b}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-nomic-embed-text}
+      LLM_PROVIDER: ${LLM_PROVIDER:-ollama}
+      EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-ollama}
+      # Auth. For anything beyond a local demo set APP_ENV=production, a long random JWT_SECRET and ADMIN_PASSWORD (12+ chars):
+      # production disables demo logins and refuses to start without a strong JWT secret.
+      APP_ENV: ${APP_ENV:-development}
+      JWT_SECRET: ${JWT_SECRET:-}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@supportpilot.example}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      ADMIN_API_KEY: ${ADMIN_API_KEY:-}
+      RUNTIME_CONFIG_PATH: /app/data/state/runtime_settings.json   # settings changed on the Settings page; holds secrets
+      AUTO_SEED: "true"
+      CORS_ORIGINS: http://localhost:3000
+    extra_hosts: ["host.docker.internal:host-gateway"]   # needed on Linux; harmless on Docker Desktop
+    volumes: [chroma:/app/data/chroma, state:/app/data/state]
+    ports: ["8000:8000"]
+
+  frontend:
+    build: { context: ., dockerfile: docker/frontend.Dockerfile }
+    depends_on: [backend]
+    ports: ["3000:80"]
+
+  ollama:
+    profiles: [ollama]
+    image: ollama/ollama:latest
+    volumes: [ollama:/root/.ollama]
+    ports: ["11434:11434"]
+
+volumes:
+  pgdata:
+  chroma:
+  state:
+  ollama:

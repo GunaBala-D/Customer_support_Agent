@@ -1,0 +1,16 @@
+Acme Electronics Order Cancellation Policy
+
+When an order can be cancelled
+An order can be cancelled free of charge while its status is Pending or Processing. Once an order has the status Shipped it can no longer be cancelled.
+
+If your order has already shipped
+You can refuse the delivery or return the package after it arrives. Returns follow the 30-day return policy.
+
+How to cancel
+Ask our support assistant or an agent to cancel the order. We always ask you to confirm before an order is cancelled, because a cancellation cannot be undone.
+
+Refunds for cancelled orders
+Cancelled orders are refunded in full to the original payment method. The refund is issued within 3 to 5 business days.
+
+Changing an order instead
+Items, quantities and delivery address can only be changed while the order is Pending. After that, cancel the order and place a new one.

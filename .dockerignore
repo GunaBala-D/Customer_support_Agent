@@ -1,0 +1,9 @@
+**/.venv
+**/node_modules
+**/dist
+**/__pycache__
+.git
+.env
+data/app.db
+data/chroma
+*.log

@@ -1,0 +1,10 @@
+line-length = 130
+target-version = "py311"
+extend-exclude = ["backend/.venv", "frontend"]
+
+[lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "B008", "UP007"]
+
+[lint.isort]
+known-first-party = ["app", "tests", "evaluation"]

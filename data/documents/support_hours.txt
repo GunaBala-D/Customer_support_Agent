@@ -1,0 +1,18 @@
+Acme Electronics Customer Support Hours and Contact
+
+Support hours
+Monday to Friday: 8:00 AM to 8:00 PM Eastern Time.
+Saturday: 9:00 AM to 5:00 PM Eastern Time.
+Sunday: closed. Email and chat messages are answered the next business day.
+
+Contact channels
+Email: support@acme-electronics.example
+Phone: 1-800-555-0142 (during support hours)
+Live chat: available on the website during support hours, with this assistant available at all times.
+
+Response times
+Email requests receive a first response within 1 business day.
+Tickets marked high priority, such as payment problems, are reviewed first.
+
+Human escalation
+If the assistant cannot resolve your issue it opens a support ticket and a human agent continues the conversation with the full chat history.
